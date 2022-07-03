@@ -13,6 +13,7 @@ const isAdmin = async (req, res, next) => {
     req.identify = decoded;
     next();
   } catch (error) {
+    console.log(error.message);
     next(error);
   }
 };

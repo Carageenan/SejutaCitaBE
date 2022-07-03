@@ -6,7 +6,6 @@ const { comparePass } = require("../helpers/bcrypt");
 class Controller {
   static async loginUser(req, res, next) {
     try {
-      console.log("masuk");
       await prisma.$connect();
       const user = await prisma.user.findUnique({
         where: {

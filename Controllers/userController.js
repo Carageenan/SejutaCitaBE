@@ -9,6 +9,13 @@ class Controller {
       const user = await prisma.user.findUnique({
         where: { id: req.params.id },
       });
+      console.log(user);
+      if (!user) {
+        throw {
+          status: 404,
+          message: "User not found",
+        };
+      }
       res.status(200).json({
         message: "Success get user by id",
         data: {
@@ -70,6 +77,25 @@ class Controller {
   static async registerUser(req, res, next) {
     try {
       await prisma.$connect();
+      const validateEmail = await prisma.user.findUnique({
+        where: { email: req.body.email },
+      });
+      console.log(validateEmail);
+      if (validateEmail) {
+        throw {
+          status: 400,
+          message: "Email already registered",
+        };
+      }
+      const validateUsername = await prisma.user.findUnique({
+        where: { username: req.body.username },
+      });
+      if (validateUsername) {
+        throw {
+          status: 400,
+          message: "Username already registered",
+        };
+      }
       const user = await prisma.user.create({
         data: {
           name: req.body.name,
