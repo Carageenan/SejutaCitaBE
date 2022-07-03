@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Muhammad Ihsan Erdiansyah",
+    "username": "ihsan",
+    "email": "ihsan@gmail.com",
+    "password": "secret",
+    "role": "Admin"
+  },
+  {
+    "name": "Setiawan",
+    "username": "setiawan",
+    "email": "setiawan@gmail.com",
+    "password": "secret",
+    "role": "User"
+  },
+  {
+    "name": "Budi",
+    "username": "budi",
+    "email": "budi@gmail.com",
+    "password": "secret",
+    "role": "User"
+  }
+]
