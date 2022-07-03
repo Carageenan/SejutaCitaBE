@@ -123,6 +123,15 @@ class Controller {
   static async updateUser(req, res, next) {
     try {
       await prisma.$connect();
+      const validateUser = await prisma.user.findUnique({
+        where: { id: req.params.id },
+      });
+      if (!validateUser) {
+        throw {
+          status: 404,
+          message: "User not found",
+        };
+      }
       const user = await prisma.user.update({
         where: { id: req.params.id },
         data: {
@@ -151,6 +160,15 @@ class Controller {
   static async deleteUser(req, res, next) {
     try {
       await prisma.$connect();
+      const validateUser = await prisma.user.findUnique({
+        where: { id: req.params.id },
+      });
+      if (!validateUser) {
+        throw {
+          status: 404,
+          message: "User not found",
+        };
+      }
       const user = await prisma.user.delete({
         where: { id: req.params.id },
       });
