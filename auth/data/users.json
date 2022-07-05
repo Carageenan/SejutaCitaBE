@@ -12,12 +12,5 @@
     "email": "setiawan@gmail.com",
     "password": "secret",
     "role": "User"
-  },
-  {
-    "name": "Budi",
-    "username": "budi",
-    "email": "budi@gmail.com",
-    "password": "secret",
-    "role": "User"
   }
 ]

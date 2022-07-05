@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: auth
+spec:
+  containers:
+    - name: auth
+      image: carageenan/auth_sejutacita
+      ports:
+        - containerPort: 3000

@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const Controller = require("../Controllers/userController");
-const { isAdmin } = require("../middleware/auth");
+const { isAdmin, isLogin } = require("../middleware/auth");
 
+router.use(isLogin);
 router.get("/myData", Controller.getMyData);
 router.use(isAdmin);
 router.get("/", Controller.getAllUsers);

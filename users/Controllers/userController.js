@@ -37,6 +37,12 @@ class Controller {
       const user = await prisma.user.findUnique({
         where: { id: req.identify.userId },
       });
+      if (!user) {
+        throw {
+          status: 404,
+          message: "User not found",
+        };
+      }
       res.status(200).json({
         message: "Success get my data",
         data: {
@@ -143,7 +149,7 @@ class Controller {
         },
       });
       res.status(200).json({
-        message: "Success update",
+        message: `Success update user with id ${validateUser.id}`,
         data: {
           name: user.name,
           username: user.username,
@@ -173,7 +179,7 @@ class Controller {
         where: { id: req.params.id },
       });
       res.status(200).json({
-        message: "Success delete",
+        message: `Success delete user with id ${validateUser.id}`,
         data: {
           name: user.name,
           username: user.username,
