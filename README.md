@@ -19,7 +19,8 @@ Admin Credentials:
 
 -role: Admin
 #
-untuk seeding, jalankan file pada folder : 
+Tidak perlu melakukan seeding, tapi jika
+diperlukan untuk seeding, jalankan file pada folder : 
 
 SejutaCitaBE/seeding/seedUser.js
 #
