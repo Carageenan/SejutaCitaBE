@@ -22,7 +22,7 @@ Admin Credentials:
 Tidak perlu melakukan seeding, tapi jika
 diperlukan untuk seeding, jalankan file pada folder : 
 
-SejutaCitaBE/seeding/seedUser.js
+SejutaCitaBE/auth/seeding/seedUser.js
 #
 untuk diagram Flow API's ada pada file:
 
